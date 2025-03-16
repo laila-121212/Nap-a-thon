@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Nap-a-thon</title>
+  <link href="style3.css" rel="stylesheet" type="text/css" />
+  <!-- Add Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="content">
+      <header>
+        <h2>Hackathon Sleep Information</h2>
+      </header>
+
+      <form id="hackathon-form">
+        <!-- Sleep Time -->
+        <div class="form-group">
+          <label for="sleep-time">Sleep Time (hours):</label>
+          <input type="number" id="sleep-time" name="slptime" min="0" max="24" required>
+        </div>
+
+        <!-- Hackathon Length -->
+        <div class="form-group">
+          <label for="hackathon-length">Hackathon Length (hours):</label>
+          <input type="number" id="hackathon-length" name="hcktime" min="10" max="48" required>
+        </div>
+
+        <!-- Start Time -->
+        <div class="form-group">
+          <label for="start-time">Start Time:</label>
+          <input type="time" id="start-time" name="stime" required>
+        </div>
+
+        <!-- Start Date -->
+        <div class="form-group">
+          <label for="start-date">Start Date:</label>
+          <input type="date" id="start-date" name="stdate" required>
+        </div>
+
+        <!-- End Time -->
+        <div class="form-group">
+          <label for="end-time">End Time:</label>
+          <input type="time" id="end-time" name="etime" required>
+        </div>
+
+        <!-- End Date -->
+        <div class="form-group">
+          <label for="end-date">End Date:</label>
+          <input type="date" id="end-date" name="edate" required>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group">
+          <button type="submit" class="btn int">Go to Schedule Page</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Form submission handler
+    document.getElementById('hackathon-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      // Get form values
+      const sleepTime = document.getElementById('sleep-time').value;
+      const hackathonLength = document.getElementById('hackathon-length').value;
+      const startTime = document.getElementById('start-time').value;
+      const startDate = document.getElementById('start-date').value;
+      const endTime = document.getElementById('end-time').value;
+      const endDate = document.getElementById('end-date').value;
+
+      // Store data in localStorage
+      localStorage.setItem('sleepTime', sleepTime);
+      localStorage.setItem('hackathonLength', hackathonLength);
+      localStorage.setItem('startTime', startTime);
+      localStorage.setItem('startDate', startDate);
+      localStorage.setItem('endTime', endTime);
+      localStorage.setItem('endDate', endDate);
+
+      // Redirect to schedule page
+      window.location.href = 'index5.html';
+    });
+  </script>
+</body>
+
+</html>

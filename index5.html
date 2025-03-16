@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Sleep Schedule</title>
+  <link href="style2.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="content">
+      <h2>Your Nap-a-thon Sleep Schedule</h2>
+
+      <!-- Displaying the sleep schedule -->
+      <p id="sleepSchedule"></p>
+    </div>
+  </div>
+
+  <script>
+    // Get the query parameter 'sleepTime' from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const sleepTime = urlParams.get('sleepTime');
+
+    // Display the sleep schedule if the sleepTime parameter is present
+    if (sleepTime) {
+      document.getElementById("sleepSchedule").textContent = `You should start sleeping at: ${sleepTime}`;
+    } else {
+      document.getElementById("sleepSchedule").textContent = "Sorry, no sleep schedule available.";
+    }
+  </script>
+</body>
+</html>

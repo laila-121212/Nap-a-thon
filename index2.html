@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style2.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8">
+  <title>Sign Up for Nap-a-thon</title>
+  <!-- Add Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Pikaday CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+</head>
+
+<body>
+  <!-- Container for the entire content -->
+  <div class="container">
+    <!-- Main content section -->
+    <main class="content">
+      <!-- Header Section -->
+      <header class="header">
+        <h3>Sign Up for</h3>
+        <h1>Nap-a-thon</h1>
+      </header>
+
+      <!-- Sign-Up Form -->
+      <form id="signup-form" class="form">
+        <!-- Email Input -->
+        <div class="form-group">
+          <label for="email" class="sr-only">Email</label>
+          <input type="email" id="email" placeholder="Enter your email" class="form-input" required />
+        </div>
+
+        <!-- Password Input -->
+        <div class="form-group">
+          <label for="password" class="sr-only">Password</label>
+          <input type="password" id="password" placeholder="Create a password" class="form-input" required />
+        </div>
+
+        <!-- Birthdate Picker -->
+        <div class="form-group">
+          <label for="birthdate" class="sr-only">Birthdate</label>
+          <input type="text" id="birthdate" placeholder="Select your birthdate" class="form-input" readonly />
+          <small class="help-text">Click to select your birthdate.</small>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+      </form>
+
+      <!-- Footer Section -->
+      <footer class="footer">
+        <p class="footer-text">
+          By continuing, you agree to our <strong>Terms of Service, Privacy Policy.</strong>
+        </p>
+        <hr class="footer-divider" />
+        <p class="footer-text">
+          Already have an account? <a href="index.html" class="footer-link">Log in</a>
+        </p>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Pikaday JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+  <script>
+    // Initialize Pikaday
+    const picker = new Pikaday({
+      field: document.getElementById('birthdate'),
+      format: 'MM/DD/YYYY', // Date format
+      yearRange: [1900, new Date().getFullYear()], // Year range
+      maxDate: new Date(), // Disable future dates
+      showMonthAfterYear: true,
+      i18n: {
+        previousMonth: 'Prev',
+        nextMonth: 'Next',
+        months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+        weekdays: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+        weekdaysShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+      },
+      onSelect: function () {
+        // Optional: Add custom behavior when a date is selected
+        console.log('Selected date:', this.getDate());
+      }
+    });
+
+    // Form submission handler
+    document.getElementById('signup-form').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent the form from submitting normally
+
+      // Get form values
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const birthdate = document.getElementById('birthdate').value;
+
+      // Validate form inputs
+      if (email && password && birthdate) {
+        alert(`Thank you for signing up!\nEmail: ${email}\nBirthdate: ${birthdate}`);
+        // Redirect to index6.html after successful validation
+        window.location.href = 'index6.html';
+      } else {
+        alert('Please fill in all fields and select your birthdate.');
+      }
+    });
+  </script>
+</body>
+
+</html>

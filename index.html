@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Nap-a-thon</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <!-- Add Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <main class="content">
+      <header>
+        <img src="IMG_1253.jpeg" alt="Nap-a-thon Logo" width="5" height="5" />
+        <h1>Welcome to Nap-a-thon</h1>
+      </header>
+
+      <form id="login-form">
+        <input type="email" placeholder="Enter your email" class="detail" aria-label="Email" required /><br />
+        <input type="password" placeholder="Enter your password" class="detail" aria-label="Password" required />
+        <a href="#" class="forgot-password">Forgot your password?</a>
+
+        <!-- Error message placeholder -->
+        <p id="error-message" style="color: red; display: none;">Account does not exist.</p>
+
+        <button type="submit" class="btn int">Log in</button>
+        <p class="or">OR</p>
+        <button type="button" class="btn fbk" aria-label="Continue with Facebook">
+          <i class="fab fa-facebook fa-lg" style="color: white; padding-right: 10px;"></i>
+          Continue with Facebook
+        </button><br />
+        <button type="button" class="btn ggl" aria-label="Continue with Google">
+          <i class="fab fa-google" style="color: rgb(11, 241, 22); padding-right: 10px;"></i>
+          Continue with Google
+        </button>
+      </form>
+
+      <footer>
+        <p>
+          By continuing, you agree to our <strong>Terms of Service, Privacy Policy.</strong>
+        </p>
+        <hr />
+        <p>Not on yet? <a href="index2.html">Sign up</a></p>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // Form submission handler
+    document.getElementById('login-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const email = document.querySelector('input[type="email"]').value;
+      const password = document.querySelector('input[type="password"]').value;
+      const errorMessage = document.getElementById('error-message');
+
+      // Simulate account validation
+      const validAccounts = [
+        { email: "user@example.com", password: "password123" },
+        { email: "test@example.com", password: "test123" }
+      ];
+
+      const accountExists = validAccounts.some(account => account.email === email && account.password === password);
+
+      if (accountExists) {
+        // Successful login
+        alert(`Logged in successfully!\nEmail: ${email}`);
+        errorMessage.style.display = 'none'; // Hide error message
+      } else {
+        // Account does not exist
+        errorMessage.style.display = 'block'; // Show error message
+      }
+    });
+  </script>
+</body>
+
+</html>

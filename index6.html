@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Nap-a-thon</title>
+  <link href="style3.css" rel="stylesheet" type="text/css" />
+  <!-- Add Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="content">
+      <form id="signup-form">
+        <h2>Sign Up</h2>
+        <!-- First Name -->
+        <div class="form-group">
+          <label for="first-name">First Name</label>
+          <input type="text" id="first-name" name="fn" placeholder="First Name" required>
+        </div>
+
+        <!-- Last Name -->
+        <div class="form-group">
+          <label for="last-name">Last Name</label>
+          <input type="text" id="last-name" name="ln" placeholder="Last Name" required>
+        </div>
+
+        <!-- Age -->
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" id="age" name="age" min="1" max="100" required>
+        </div>
+
+        <!-- Gender -->
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender" required>
+            <option value="">Select</option>
+            <option value="F">Female</option>
+            <option value="M">Male</option>
+            <option value="O">Other</option>
+            <option value="NS">Prefer not to specify</option>
+          </select>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group">
+          <button type="submit" class="btn int">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Form submission handler
+    document.getElementById('signup-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      alert('Thank you for signing up!');
+      window.location.href = 'index3.html'; // Redirect to index3.html
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(Our\ backgorund.jpeg);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #333;
+}
+
+.container {
+  background-color: white;
+  width: 100%;
+  max-width: 480px;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.content {
+  text-align: center;
+}
+
+header h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #043e0e; /* Dark green text */
+  margin-bottom: 1.5rem;
+}
+
+/* Form Input Styling */
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.form-input {
+  width: 100%;
+  height: 50px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  color: #555;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #043e0e; /* Dark green border on focus */
+  box-shadow: 0 0 8px rgba(4, 62, 14, 0.3); /* Subtle green shadow on focus */
+  outline: none;
+}
+
+.help-text {
+  display: block;
+  font-size: 0.875rem;
+  color: #777;
+  margin-top: 0.5rem;
+}
+
+/* Button Styling */
+.btn {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.98); /* Slight scale-down on click */
+}
+
+.btn-primary {
+  background-color: #043e0e; /* Dark green button */
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0f9518; /* Lighter green on hover */
+}
+
+/* Footer Styling */
+footer {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+footer p {
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+footer p:last-child {
+  opacity: 1;
+}
+
+footer a {
+  color: #043e0e; /* Dark green link */
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #d00c16; /* Red on hover */
+  text-decoration: underline;
+}
+
+hr {
+  width: 50%;
+  opacity: 0.3;
+  margin: 1rem auto;
+  border: 0;
+  border-top: 1px solid #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header h3 {
+    font-size: 1.25rem;
+  }
+
+  .form-input {
+    height: 45px;
+    font-size: 0.875rem;
+  }
+
+  .btn {
+    height: 45px;
+    font-size: 0.875rem;
+  }
+
+  footer p {
+    font-size: 0.75rem;
+  }
+}
